@@ -1,68 +1,159 @@
-.container {
-    width: 668px;
-    padding: 48px 48px 36px 48px;
-   // border: 1px solid red;
-    border-radius: 6px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+body {
+  background: #fff;
+  font-size: 14px;
+ 
+}
+
+.outer{
+  padding: 36px;
+  width: 650px;
+ 
+}
+
+.inner{
+  display: flex;
+  flex-direction: row
+}
+.color-fundoo{
+  font-weight: 550;
+  font-size: 15pt;
+  font-family: sans-serif;
+}
+.color-fundoo-F{
+  font-weight: 500;
+  font-size: 20pt;
+}
+.create{
+  font-size: 24px;
+  font-weight: 400;
+  
+}
+.RegisterForm{
+
+  display: inline-block;
+  font-size: 14px;
+  padding: 30px 0 0;
+  width: 100%; 
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.name{
+  display: flex;
+  flex-direction: row;
+  width: 354px;
+ // justify-content: space-around;
+}
+.name-f, .new-password{
+  margin-right: 8px;
+}
+
+.fname, .lname, .new-password, .confirm-password{
+  width: 190px !important;
+}
+.username{
+  width: 387px !important; 
+}
+.password{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.Show-password{
+  margin-top: 10px;
+}
+
+.pass-hint{
+  flex-grow: 2;
+  width: 380px;
+  font-size: smaller;
+  margin-left: 8px;
+  margin-top: 0px;
+}
+.div-form{
+ // width: 50%;
+//  height: 100%;
+display:inline-block;
+justify-content: flex-start;
+ // width: 448px;
+  padding: 16px;
+}
+
+.icon{
+  margin: auto;
+ // flex-shrink: 1;
+ // width: 50%;
+//  height: 100%;
+display:inline-block;
+}
+
+.image-icon{
+  width:"244";
+  height: "244";
+}
+.form-item{
+  width: min-content;
+}
+
+// @media (min-width: 450px){
+//   .outer {
+//       padding: 48px 40px 36px;
+//   }
+// }
+@media (max-width : 900px){
+  .icon{
+      display: none;
+  }  
+  .outer{
+    width: max-content;
+    padding: 48px 40px 36px;
   }
-  .c-left-part {
-    //border: 1px solid red;
-    width: 70%;
-    display: flex;
+}  
+@media (max-width : 600px){
+  .outer{
+    border: none;
+    margin: auto;
+   // padding: 30px 30px 30px 30px;
+   padding: 0;
+   // width: 90%;
+    height: 100%;
+  }
+  .inner{
+    margin: auto;
+    width: max-content;
+    padding: 0 0 0 0;
+  }
+  .name{
     flex-direction: column;
-  }
-  
-  .c-right-part {
-    //border: 1px solid red;
-    //width: 30%;
-    flex-grow: 1;
-  }
-  .inputField {
     width: 100%;
-    padding-right: 10px;
+
   }
-  .c-left-input {
-    display: flex;
+  .name-f{
+    margin-right: 0px;
   }
-  .box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  .fname, .lname, .new-password, .confirm-password{
+    width: 100% !important;
   }
+  .password{
+    flex-direction: column;
+    width: 100%;
+  }
+  .div{
+    margin: auto;
+  }
+  body{
+    margin: 0;
+  padding: 0;
+  }
+}
+
+.btns{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   
-  // .username {
-  //   // width: 0px;
-  // }
-  .password {
-    display: flex;
-    margin-top: 15px;
-  }
-  
-  .Show-password {
-    margin-top: 10px;
-  }
-  
-  .pass-hint {
-    flex-grow: 2;
-    width: 380px;
-    font-size:small;
-    margin-left: 8px;
-    margin-top: 0px;
-  }
-  
-  .buttons {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .signin {
-    align-self: center;
-  }
-  .c-right-part image{
-    max-width: 800px;
-    height: auto;   
-  }
+}
