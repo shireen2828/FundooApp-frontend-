@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators, FormGroupDirective, NgForm } from '@angular/forms';
-
-
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -11,34 +9,40 @@ import { FormControl, FormGroup, FormBuilder, Validators, FormGroupDirective, Ng
 
 export class RegistrationComponent implements OnInit {
   registrationForm: FormGroup;
+  hide = true;
 
   constructor(private formbuilder: FormBuilder) { 
 
     this.registrationForm = this.formbuilder.group({
 
-      firstname: new FormControl ('', [Validators.required,
+      FirstName: new FormControl ('', [Validators.required,Validators.minLength(3),
         Validators.pattern('^[A-Z][a-z]{2,}$')
        ],),
-      lastname: new FormControl ('', [Validators.required, 
+      LastName: new FormControl ('', [Validators.required, Validators.minLength(3),
         Validators.pattern('^[A-Z][a-z]{2,}$')
       ],),
-      email: new FormControl ('', [Validators.required, 
+      Email: new FormControl ('', [Validators.required, 
         Validators.pattern('^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*$')
       ]),
-      password: new FormControl ('',  [Validators.required, 
+      Password: new FormControl ('',  [Validators.required, Validators.minLength(8), 
         Validators.pattern('^(?=.{8,20}$)(?=.*[\\d])(?=.*[A-Z])[\\w]*[\\W][\\w]*$')
       ]),
-      confirm: new FormControl ('', [Validators.required,
+      Confirm: new FormControl ('', [Validators.required,
         Validators.pattern('^(?=.{8,20}$)(?=.*[\\d])(?=.*[A-Z])[\\w]*[\\W][\\w]*$')
       ])
   
-    });
+    },{ Validators: this.checkPassword });
 
-  }
-
-  ngOnInit(): void {
   }
   
+  ngOnInit(): void {
+    
+  }
+  checkPassword(group: FormGroup){
+    var pword = group.controls.Password.value;
+    var cpword = group.controls.Confirm.value;
 
+    return pword === cpword ? null : {notSame:true}
+  }
 }
  
