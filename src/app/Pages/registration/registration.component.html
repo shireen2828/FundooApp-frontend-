@@ -13,14 +13,14 @@
         <br>
           <span class="create">Create your FundooNotes Account</span>
       </div>
-      <form class="RegisterForm" [formGroup]="registerForm">
+      <form class="RegisterForm" [formGroup] = "registrationForm" (ngSubmit)="registrationForm.valid" >
           <div class="form-container"> 
             <div class="name form-item ">
               <div class="name-f">
                 <mat-form-field class="fname" appearance="outline">
                   <mat-label >First Name</mat-label>
-                  <input matInput placeholder="" name="firstname" formControlName="FirstName" >
-                  <mat-error>
+                  <input matInput placeholder="" name="firstname" formControlName="FirstName" id="firstname">
+                  <mat-error *ngIf="registrationForm.hasError('required', 'FirstName')">
                     *Required
                   </mat-error>
                 </mat-form-field>
@@ -28,8 +28,8 @@
               <div class="name-l">
                 <mat-form-field class="lname" appearance="outline">
                   <mat-label >Last Name</mat-label>
-                  <input matInput placeholder="" name="lastName" formControlName="LastName" >
-                  <mat-error>
+                  <input matInput placeholder="" name="lastName" formControlName="LastName" id="lastname">
+                  <mat-error *ngIf="registrationForm.hasError('required', 'LastName')">
                     *Required
                   </mat-error>
                 </mat-form-field>
@@ -40,9 +40,9 @@
             <div class="email form-item">
               <mat-form-field class="username" appearance="outline">
                 <mat-label >Username</mat-label>
-                <input matInput placeholder="" name="email" formControlName="Email">
+                <input matInput placeholder="" name="email" formControlName="Email" id="email">
                 <!-- <span class="input-suffix" matSuffix >@gmail.com</span> -->
-                <mat-error>
+                <mat-error *ngIf="registrationForm.hasError('required', 'Email')">
                   *Required
                 </mat-error>
                 <mat-hint>You can use letters, numbers & periods</mat-hint>
@@ -51,21 +51,21 @@
             <div class="password form-item">
               <mat-form-field class="new-password" appearance="outline">
                 <mat-label >Password</mat-label>
-                <input type="password" id="password" type="text" matInput placeholder="" name="password" formControlName="Password">
+                <input type="password" id="password" type="text" matInput placeholder="" name="password" formControlName="Password" itemid="password">
                
-                <mat-error>
+                <mat-error *ngIf="registrationForm.hasError('required', 'Password')">
                   Please enter your new password
                 </mat-error>
               </mat-form-field>
             
               <mat-form-field class="confirm-password" appearance="outline">
                 <mat-label >Confirm</mat-label>
-                <input type="text" matInput placeholder=""  formControlName="Confirm">
+                <input type="text" matInput placeholder=""  formControlName="Confirm" id="confirm">
      
-                 <mat-error>
+                 <mat-error  *ngIf="registrationForm.hasError('notSame')">
                   Passwords do not match
                 </mat-error>
-                <mat-error>
+                <mat-error *ngIf="registrationForm.hasError('required', 'Confirm') && !registrationForm.hasError('notSame')">
                   *Required
                 </mat-error>
   
