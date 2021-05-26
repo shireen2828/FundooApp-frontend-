@@ -5,14 +5,16 @@ body {
 }
 
 .outer{
-  padding: 36px;
-  width: 650px;
+  // padding: 36px;
+  // width: 650px;
+  display: flex;
+  justify-content: center;
  
 }
 
 .inner{
   display: flex;
-  flex-direction: row
+  flex-direction: row;
 }
 .color-fundoo{
   font-weight: 550;
