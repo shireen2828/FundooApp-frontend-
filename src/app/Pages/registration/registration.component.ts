@@ -23,7 +23,7 @@ export class RegistrationComponent implements OnInit {
         Validators.pattern('^[A-Z][a-z]{2,}$')
       ],),
       Email: new FormControl ('', [Validators.required, 
-        Validators.pattern('^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*$')
+        Validators.pattern('^[a-zA-Z0-9+_-]+(?:\\.[a-zA-Z0-9_-]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z]{2,}){1,2}$')
       ]),
       Password: new FormControl ('',  [Validators.required, Validators.minLength(8), 
         Validators.pattern('^(?=.{8,20}$)(?=.*[\\d])(?=.*[A-Z])[\\w]*[\\W][\\w]*$')

@@ -17,12 +17,12 @@
     <div class="child use">
     <span>Use your FunDooNotes Account</span>
   </div>
-  <form class="child loginForm">
+  <form class="child loginForm" [formGroup]= "loginform" (ngSubmit)="loginform.valid">
     <div class="email">
       <mat-form-field class="user" appearance="outline">
         <mat-label >Email</mat-label>
         <input matInput placeholder="" formControlName="Email">
-        <mat-error >
+        <mat-error *ngIf="loginform.hasError('required', 'Email')">
           *Required
         </mat-error>
         <mat-hint>You can use letters, numbers & periods</mat-hint>
@@ -31,8 +31,8 @@
     <div class="password">
       <mat-form-field class="pass" appearance="outline">
         <mat-label >Password</mat-label>
-        <input type="password" id="password" matInput placeholder="" formControlName="Password">
-        <mat-error>
+        <input type="password" id="password" matInput placeholder="" formControlName="Password" required>
+        <mat-error *ngIf="loginform.hasError('required', 'Password')">
           Please enter your password
         </mat-error>
         <mat-hint class="pass-hint"  >Use 8 or more characters with a mix of letters, numbers & symbols
