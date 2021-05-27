@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './Pages/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { LoginComponent } from './Pages/login/login.component';
     MatCheckboxModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule
   ],
   
   providers: [],

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UserServiceService } from 'src/app/Services/userService/user-service.service';
 
 @Component({
   selector: 'app-registration',
@@ -11,7 +12,7 @@ export class RegistrationComponent implements OnInit {
   registrationForm: FormGroup;
   hide = true;
 
-  constructor(private formbuilder: FormBuilder) { 
+  constructor(private formbuilder: FormBuilder, public service: UserServiceService) { 
 
     this.registrationForm = this.formbuilder.group({
 
@@ -34,15 +35,28 @@ export class RegistrationComponent implements OnInit {
     },{ Validators: this.checkPassword });
 
   }
-  
-  ngOnInit(): void {
-    
-  }
   checkPassword(group: FormGroup){
     var pword = group.controls.Password.value;
     var cpword = group.controls.Confirm.value;
 
     return pword === cpword ? null : {notSame:true}
+  }
+  
+  ngOnInit(): void {
+    
+  }
+  
+  register = () => {
+    let data ={
+      "FirstName": this.registrationForm.controls.FirstName.value,
+      "LastName": this.registrationForm.controls.LastName.value,
+      "Email": this.registrationForm.controls.Email.value,
+      "Password": this.registrationForm.controls.Password.value
+    }
+
+    this.service.registration(data).subscribe((result) => {
+      console.log(result);
+    })
   }
 }
  

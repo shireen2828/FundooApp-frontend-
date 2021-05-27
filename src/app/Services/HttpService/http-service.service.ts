@@ -6,7 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpServiceService {
 
-  httpclient: any;
+  constructor(private httpclient: HttpClient) {}
 
-  constructor(private client: HttpClient) { }
+  post(baseUrl: string, data:any, isHeaderRequired: any = false, headers = null){
+    return this.httpclient.post(baseUrl, data, isHeaderRequired && headers)
+  }
 }
