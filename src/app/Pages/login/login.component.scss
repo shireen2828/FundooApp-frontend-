@@ -1,3 +1,91 @@
+body {
+    background: #fff;
+    direction: ltr;
+    font-size: 14px;
+    line-height: 1.4286;
+    margin: 0;
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+    padding: 0;
+  }
+  .btns{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+  .create{
+    align-self: center;
+  }
+  .submit-btn{
+    display: flex;
+      justify-content: flex-end;
+  }
 
+  .password{
+    padding-top: 20px;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    width: 400px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 85px;
+    height: auto;
+    min-height: 450px;
+    align-content: center;
+  }
+  .use{
+    color: #202124;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .1px;
+    line-height: 1.5;
+    padding-bottom: 0;
+    padding-top: 8px;
+  }
+  .Show-password{
+    margin-top: 20px;
+    }
+    .child{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .loginForm{
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        display: inline-block;
+        font-size: 14px;
+        padding: 24px 0 0;
+        vertical-align: top;
+        white-space: normal;
+        width: 100%
+      }
+      .color-fundoo{
+        font-weight: 550;
+        font-size: 15pt;
+        font-family: sans-serif;
+      }
+      .color-fundoo-F{
+        font-weight: 500;
+        font-size: 20pt;
+      }
+      .signin{
+        color: #202124;
+        padding-top: 16px;
+        font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+        font-size: 24px;
+          font-weight: 400;
+          line-height: 1.3333;
+      }
+      mat-form-field{
+        width: -webkit-fill-available;
+      }
       
 
