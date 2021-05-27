@@ -14,4 +14,44 @@
     <div class="child signin">
       <span>Sign in</span>
     </div>
+    <div class="child use">
+    <span>Use your FunDooNotes Account</span>
+  </div>
+  <form class="child loginForm">
+    <div class="email">
+      <mat-form-field class="user" appearance="outline">
+        <mat-label >Email</mat-label>
+        <input matInput placeholder="" formControlName="Email">
+        <mat-error >
+          *Required
+        </mat-error>
+        <mat-hint>You can use letters, numbers & periods</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="password">
+      <mat-form-field class="pass" appearance="outline">
+        <mat-label >Password</mat-label>
+        <input type="password" id="password" matInput placeholder="" formControlName="Password">
+        <mat-error>
+          Please enter your password
+        </mat-error>
+        <mat-hint class="pass-hint"  >Use 8 or more characters with a mix of letters, numbers & symbols
+        </mat-hint>
+      </mat-form-field>          
+    </div>
+    <div class="Show-password">
+      <section class="example-section">
+        <mat-checkbox color="primary" >Show password</mat-checkbox>
+      </section>
+  
+    </div>
+    <div class="btns">
+      <div class="create">
+      Create account
+      </div>
+      <div class="submit-btn">
+        <button type="submit" mat-raised-button >Login</button>
+          </div>
+       </div>
+  </form>
 </div>
