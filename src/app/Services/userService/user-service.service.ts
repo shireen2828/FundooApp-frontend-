@@ -14,6 +14,9 @@ export class UserServiceService {
 
   registration = ( data:any ) => {
     return this.httpservice.post(`${this.baseurl}api/register`, data)
-    
+  }
+
+  login = (data:any) => {
+    return this.httpservice.post(`${this.baseurl}/api/loginEmployee`, data)
   }
 }
