@@ -17,7 +17,7 @@
     <div class="child use">
     <span>Use your FunDooNotes Account</span>
   </div>
-  <form class="child loginForm" [formGroup]= "loginform" (ngSubmit)="loginform.valid">
+  <form class="child loginForm" [formGroup]= "loginform" (ngSubmit)="login()">
     <div class="email">
       <mat-form-field class="user" appearance="outline">
         <mat-label >Email</mat-label>

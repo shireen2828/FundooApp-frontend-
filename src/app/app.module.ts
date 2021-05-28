@@ -21,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
