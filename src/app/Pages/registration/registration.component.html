@@ -51,7 +51,7 @@
             <div class="password form-item">
               <mat-form-field class="new-password" appearance="outline">
                 <mat-label >Password</mat-label>
-                <input type="password" id="password" type="text" matInput placeholder="" name="password" formControlName="Password" itemid="password">
+                <input type="password" id="password"  type="{{ isActive ? 'password' : 'text' }}" matInput placeholder="" name="password" formControlName="Password" itemid="password">
                
                 <mat-error *ngIf="registrationForm.hasError('required', 'Password')">
                   Please enter your new password
@@ -60,7 +60,7 @@
             
               <mat-form-field class="confirm-password" appearance="outline">
                 <mat-label >Confirm</mat-label>
-                <input type="text" matInput placeholder=""  formControlName="Confirm" id="confirm">
+                <input type="{{ isActive ? 'password' : 'text' }}" matInput placeholder=""  formControlName="Confirm" id="confirm">
      
                  <mat-error  *ngIf="registrationForm.hasError('notSame')">
                   Passwords do not match
@@ -75,7 +75,7 @@
            
             <div class="Show-password form-item">
               <section class="">
-                <mat-checkbox color="primary" class="Show-password" >Show password</mat-checkbox>
+                <mat-checkbox color="primary" class="Show-password" (change)="isActive = isActive ? false : true" >Show password</mat-checkbox>
               </section>
           
             </div>

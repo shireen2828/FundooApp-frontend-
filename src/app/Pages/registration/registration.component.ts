@@ -11,6 +11,8 @@ import { UserServiceService } from 'src/app/Services/userService/user-service.se
 export class RegistrationComponent implements OnInit {
   registrationForm: FormGroup;
   hide = true;
+  public isActive: boolean;
+  public notSame: boolean;
 
   constructor(private formbuilder: FormBuilder, public service: UserServiceService) { 
 
@@ -34,7 +36,15 @@ export class RegistrationComponent implements OnInit {
   
     },{ Validators: this.checkPassword });
 
+    this.isActive = true;
+    this.notSame = false;
+
   }
+
+  TogglePassword() {
+    this.isActive = this.isActive ? true : false
+  }
+
   checkPassword(group: FormGroup){
     var pword = group.controls.Password.value;
     var cpword = group.controls.Confirm.value;
