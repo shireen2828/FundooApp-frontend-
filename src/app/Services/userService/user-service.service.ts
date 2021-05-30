@@ -17,6 +17,6 @@ export class UserServiceService {
   }
 
   login = (data:any) => {
-    return this.httpservice.post(`${this.baseurl}/api/loginEmployee`, data)
+    return this.httpservice.post(`${this.baseurl}api/loginEmployee`, data)
   }
 }

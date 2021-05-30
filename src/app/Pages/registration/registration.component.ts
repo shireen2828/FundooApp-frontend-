@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserServiceService } from 'src/app/Services/userService/user-service.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBarConfig } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -14,7 +17,7 @@ export class RegistrationComponent implements OnInit {
   public isActive: boolean;
   public notSame: boolean;
 
-  constructor(private formbuilder: FormBuilder, public service: UserServiceService) { 
+  constructor(private formbuilder: FormBuilder, public service: UserServiceService, public snackbar: MatSnackBar, private route: Router) { 
 
     this.registrationForm = this.formbuilder.group({
 
@@ -41,6 +44,14 @@ export class RegistrationComponent implements OnInit {
 
   }
 
+  openSnackBar(message: string, duration: number){
+    let config = new MatSnackBarConfig();
+    if (duration != 0){
+      config.duration = duration;
+    }
+    this.snackbar.open(message, undefined, config);
+  }
+
   TogglePassword() {
     this.isActive = this.isActive ? true : false
   }
@@ -57,6 +68,9 @@ export class RegistrationComponent implements OnInit {
   }
   
   register = () => {
+    if (this.registrationForm.valid){
+      this.openSnackBar('Registering user...', 0);
+    }
     let data ={
       "FirstName": this.registrationForm.controls.FirstName.value,
       "LastName": this.registrationForm.controls.LastName.value,
@@ -66,7 +80,17 @@ export class RegistrationComponent implements OnInit {
 
     this.service.registration(data).subscribe((result) => {
       console.log(result);
-    })
+      this.openSnackBar('Registration successfull', 2000 );
+    },
+    (error:any) => {
+      if(error['status'] == 0){
+        this.openSnackBar('Registration failed: server offline', 2000);
+      }
+      else {
+        this.openSnackBar('Registration failed: ' +error['error']['message'], 2000);
+      }
+    }
+    );
   }
 }
  
