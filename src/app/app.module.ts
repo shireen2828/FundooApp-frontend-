@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { ForgetpasswordComponent } from './Pages/forgetpassword/forgetpassword.component';
+import { ResetpasswordComponent } from './Pages/resetpassword/resetpassword.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ForgetpasswordComponent } from './Pages/forgetpassword/forgetpassword.c
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    ForgetpasswordComponent
+    ForgetpasswordComponent,
+    ResetpasswordComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
