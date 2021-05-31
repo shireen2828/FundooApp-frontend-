@@ -21,6 +21,6 @@ export class UserServiceService {
   }
 
   forget = (data:any) => {
-    return this.httpservice.post(`${this.baseurl}api/forgetPassword`, data)
+    return this.httpservice.post(`${this.baseurl}api/forgetPassword?emailAdddress=` +data, null)
   }
 }

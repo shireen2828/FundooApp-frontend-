@@ -31,7 +31,7 @@
     <div class="password">
       <mat-form-field class="pass" appearance="outline">
         <mat-label >Password</mat-label>
-        <input type="password" id="password" matInput placeholder="" formControlName="Password" required>
+        <input type="password" id="password" type="{{ isActive ? 'password' : 'text' }}" matInput placeholder="" formControlName="Password" required>
         <mat-error *ngIf="loginform.hasError('required', 'Password')">
           Please enter your password
         </mat-error>
@@ -41,13 +41,15 @@
     </div>
     <div class="Show-password">
       <section class="example-section">
-        <mat-checkbox color="primary" >Show password</mat-checkbox>
+        <mat-checkbox color="primary" (change)="isActive = isActive ? false : true" >Show password</mat-checkbox>
       </section>
   
     </div>
     <div class="btns">
       <div class="create">
+        <a [routerLink]="['/register']" >
       Create account
+        </a>
       </div>
       <div class="submit-btn">
         <button type="submit" mat-raised-button >Login</button>
