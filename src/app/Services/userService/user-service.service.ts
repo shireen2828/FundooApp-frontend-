@@ -23,4 +23,8 @@ export class UserServiceService {
   forget = (data:any) => {
     return this.httpservice.post(`${this.baseurl}api/forgetPassword?emailAdddress=` +data, null)
   }
+
+  reset = (data:any) => {
+    return this.httpservice.post(`${this.baseurl}api/resetpassword`, data)
+  }
 }
