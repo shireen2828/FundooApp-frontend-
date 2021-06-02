@@ -1,5 +1,5 @@
 import { MediaMatcher } from '@angular/cdk/layout';
-import { Component, OnInit, Directive, QueryList } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,12 +7,13 @@ import { Component, OnInit, Directive, QueryList } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+ 
 
-  mobileQuery: MediaQueryList;
+  mediaQuery: MediaQueryList;
   value = 'Search';
 
   constructor(media: MediaMatcher) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px');
+    this.mediaQuery = media.matchMedia('(max-width: 600px');
 
    }
 

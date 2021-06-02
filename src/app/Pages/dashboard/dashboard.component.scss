@@ -52,7 +52,7 @@ body{
     flex: 0 0 auto;
     margin-right:10%;
   }
-  .example-container {
+  .container {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -65,7 +65,22 @@ body{
     background: white;
     color: gray;
   }
-  .example-is-mobile {
+  .example {
     position: fixed;
   }
+  mat-sidenav{
+    width: 280px;
+    border: none;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+  }
+  .mat-list-item{
+
+    border-radius: 0 25px 25px 0;
+  }
   
+  .sidenav-container {
+    flex: 1;
+  }
+  .example .sidenav-container {
+    flex: 1 0 auto;
+  }
