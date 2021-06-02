@@ -16,6 +16,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { ForgetpasswordComponent } from './Pages/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './Pages/resetpassword/resetpassword.component';
+import { DashboardComponent } from './Pages/dashboard/dashboard.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -24,7 +28,8 @@ import { ResetpasswordComponent } from './Pages/resetpassword/resetpassword.comp
     RegistrationComponent,
     LoginComponent,
     ForgetpasswordComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -38,7 +43,10 @@ import { ResetpasswordComponent } from './Pages/resetpassword/resetpassword.comp
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule
   ],
   
   providers: [],
