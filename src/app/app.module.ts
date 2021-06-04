@@ -21,7 +21,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
-
+import { MatCardModule } from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { CreatenotesComponent } from './Component/Notes/createnotes/createnotes.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { MatMenuModule } from '@angular/material/menu';
     ForgetpasswordComponent,
     ResetpasswordComponent,
     DashboardComponent,
+    CreatenotesComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -48,7 +51,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule,
+    FlexLayoutModule
   ],
   
   providers: [],

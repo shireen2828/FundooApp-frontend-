@@ -61,7 +61,10 @@ export class LoginComponent implements OnInit {
 
     this.userservice.login(data).subscribe((result) => {
       console.log(result);
+      // localStorage.setItem('token');
+      // console.log(localStorage.getItem('token'));
       this.openSnackBar('log in successfull', 2000)
+      this.route.navigate(['/Dashboard']);
     },
     (error:any) => {
       if(error['status'] == 0){
