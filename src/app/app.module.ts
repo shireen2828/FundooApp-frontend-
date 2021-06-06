@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 import { RegistrationComponent } from './Pages/registration/registration.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -23,7 +24,15 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatChipsModule } from '@angular/material/chips';
+import {TextFieldModule} from '@angular/cdk/text-field';
+import {MatDialogModule} from '@angular/material/dialog';
 import { CreatenotesComponent } from './Component/Notes/createnotes/createnotes.component';
+import { DisplaynoteComponent } from './Component/Notes/displaynote/displaynote.component';
+import { UpdateComponent } from './Component/update/update.component';
+import { IconsComponent } from './Component/icons/icons.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +43,15 @@ import { CreatenotesComponent } from './Component/Notes/createnotes/createnotes.
     ResetpasswordComponent,
     DashboardComponent,
     CreatenotesComponent,
+    DisplaynoteComponent,
+    UpdateComponent,
+    IconsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
+    CommonModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
@@ -53,7 +66,12 @@ import { CreatenotesComponent } from './Component/Notes/createnotes/createnotes.
     MatListModule,
     MatMenuModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatChipsModule,
+    TextFieldModule,
+    MatDialogModule
   ],
   
   providers: [],

@@ -8,35 +8,40 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class NoteserviceService {
+    
   headers = new HttpHeaders()
   .set('Authorization', 'Bearer '+localStorage.getItem('token')); 
   options = { headers: this.headers };
 
-  title: any;
-  description: any;
+  // title: any;
+  // description: any;
   
-  private subject = new Subject<any>();
+  // private subject = new Subject<any>();
 
-  sendMessage(message: string){
-    this.subject.next({ text: message });
-  }
+  // sendMessage(message: string){
+  //   this.subject.next({ text: message });
+  // }
 
-  getMessage(): Observable<any> {
-    return this.subject.asObservable();
-  }
+  // getMessage(): Observable<any> {
+  //   return this.subject.asObservable();
+  // }
 
   constructor(private httpservice: HttpServiceService) { }
 
   baseurl = environment.baseUrl
+
+  createNote(data: any) {
+    return this.httpservice.post(`${this.baseurl}api/Note/addNotes`, data, this.options);
+  }
 
   // addNote(data: any) {
   //   console.log(" data in user services ", data );
   //   return this.httpservice.post(`${this.baseurl}api/Note/addNotes`, data, this.options);
   // }
 
-  createNote(note:any): Observable<any> {
-    console.log(localStorage.getItem('token'));
-    return this.httpservice.post(`${this.baseurl}api/Note/addNotes`, this.options)
-    // { headers: new HttpHeaders().set('token', localStorage.getItem('token')) });
-  }
+  // createNote(note:any): Observable<any> {
+  //   console.log(localStorage.getItem('token'));
+  //   return this.httpservice.post(`${this.baseurl}api/Note/addNotes`, note, this.options)
+  //   // { headers: new HttpHeaders().set('token', localStorage.getItem('token')) });
+  // }
 }

@@ -1,0 +1,29 @@
+<div class="flex-container" >
+        <div *ngFor="let list of notesList">
+                <mat-card class="matcard-box">
+                        <mat-card-header>
+                                <mat-card-title>
+                                        <span class="title_card"> </span>
+                                </mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                                <textarea matInput class="textarea_list"  #autosize="cdkTextareaAutosize"
+                                        cdkTextareaAutosize></textarea>
+                        </mat-card-content>
+                        <div>
+                                <mat-chip-list  >
+                                        <mat-chip >
+                                         <mat-icon matChipRemove>cancel</mat-icon>
+                                        </mat-chip>
+                                        <mat-chip>
+                                                <mat-icon matChipRemove>cancel</mat-icon>
+                                        </mat-chip>
+                                </mat-chip-list>
+                        </div>
+                        <div>
+
+                        </div>
+                </mat-card>
+               
+        </div>
+</div>

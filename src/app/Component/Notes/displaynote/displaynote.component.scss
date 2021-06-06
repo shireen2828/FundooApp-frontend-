@@ -1,0 +1,26 @@
+.matcard-box{
+    margin: 10px;
+    width:250px;
+    border:1px solid rgb(229, 241, 219);
+    border-radius: 5%;
+  }
+  .matcard-box:hover{
+      visibility: visible;
+  }
+  .flex-container {
+    display: flex;
+    margin-left: 4.5vw;                                                                                                                                                                                                                                                                                                                                                               
+    //margin-right: auto;
+    flex-wrap: wrap;
+    background-color: white;                                                                                                                                                                                                                                                                                                                                                             
+  }
+  .title_card{
+    margin-left:-12px;;
+  }
+  .textarea_list{
+    width: 200px;
+  }
+  .textarea_list{
+border: none;
+outline: none;
+  }

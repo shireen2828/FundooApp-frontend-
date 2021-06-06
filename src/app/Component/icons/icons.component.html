@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="main">
+            <button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="Example icon-button with a menu">
+                <img id="icon" mat-card-image src="../../../assets/remid me.svg" />
+            </button>
+            <mat-menu #menu2="matMenu">
+                <button class="reminder-button" mat-menu-item>
+                    <span>Later today</span><span class="span2">8:00pm</span>
+                </button>
+                <button class="reminder-button" mat-menu-item >
+                    <span>Tomorrow</span><span class="span2">8:00pm</span>
+                </button>
+                <button class="reminder-button" mat-menu-item >
+                    <span>Next week</span><span class="span2">Mon,8:00am</span>
+                </button>
+                <button mat-menu-item>
+                    <label class="input-wrapper">
+                        <input placeholder="Peak date & time">
+                        <button mat-icon-button>
+                            <mat-icon>schedule</mat-icon>
+                        </button>
+                    </label>
+                </button>
+            </mat-menu>
+        </div>
+
+        <div class="main">
+            <button mat-icon-button>
+                <img id="icon" mat-card-image src="../../../assets/collaborator.svg" />
+            </button>
+        </div>
+        <div class="main">
+                <button mat-icon-button [matMenuTriggerFor]="menu1" aria-label="Example icon-button with a menu">
+                    <img id="icon" mat-card-image src="../../../assets/change color.svg" />
+                </button>
+                <mat-menu  #menu1="matMenu" yPosition="above">
+                    <div  fxLayout="row">
+                        <div>
+                                <button mat-mini-fab fxLayout="row"
+                                 class="color-menu"></button>
+                        </div>
+                    </div>
+                </mat-menu>
+            </div>
+            <div class="main">
+                <button mat-icon-button>
+                    <img id="icon" mat-card-image src="../../../assets//insert_photo_black_24dp.svg" />
+                </button>
+            </div>
+        
+            <div class="main">
+                <button mat-icon-button >
+                    <img id="icon" mat-card-image src="../../../assets/archive.svg" />
+                </button>
+            </div>
+        
+            <div class="main">
+                <button class="menuicon" mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+            </div>
+        
+            <div>
+                <mat-menu #menu="matMenu">
+        
+                    <button mat-menu-item>
+                        <span>Delete note</span>
+                    </button>
+                    <button mat-menu-item >
+                        <span>Add label</span>
+                    </button>
+        
+                    <button mat-menu-item>
+                        <span>Change labels</span>
+                    </button>
+        
+                    <button mat-menu-item>
+                        <span>Add drawing</span>
+                    </button>
+        
+                    <button mat-menu-item>
+                        <span>Make a copy</span>
+                    </button>
+        
+                    <button mat-menu-item>
+                        <span>Copy to Google Docs</span>
+                    </button>
+                </mat-menu>
+            </div>
+</div>

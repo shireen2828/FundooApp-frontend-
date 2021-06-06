@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    margin-left: -20px;
+    margin-bottom: -25px;;
+}
+.main{
+    padding: 2%;
+}
+.menuicon{
+    border: none;
+    outline: none;
+    margin-top: -8px;
+}
+#icon {
+    margin-top: 0px;
+    opacity: 0.6;
+    width: 50%;
+    height: 50%;
+}
+.matLevel{
+    margin-top:10px;
+}

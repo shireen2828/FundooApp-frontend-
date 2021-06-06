@@ -10,7 +10,7 @@
         <div class="flex-container">
      <div>
     <mat-card class="matcard-box">
-        <form [formGroup]="noteForm">
+        <form [formGroup]="noteForm" (ngSubmit)="addNote()">
              <mat-card-header>
                 <mat-card-title style="display: flex;">
                     <input class="form-control" type="text" style="width:35vw;margin-left:-15px; height:20px; border: none; outline: none;" placeholder="Title" formControlName="title" >
@@ -24,8 +24,9 @@
                         cdkTextareaAutosize placeholder="Take a note..." 
                         formControlName="description"
                         cdkAutosizeMaxRows="25"></textarea>
+                        <app-icons></app-icons>
         </mat-card-content>
-        <button (click)="onReturn()" style="float: right; margin-top: -10px;">close</button>
+        <button (click)="addNote()" style="float: right; margin-top: -10px;">close</button>
             </form>
      </mat-card>
      </div>
