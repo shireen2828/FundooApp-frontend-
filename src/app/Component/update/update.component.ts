@@ -8,11 +8,10 @@ import { NoteserviceService } from 'src/app/Services/noteservice/noteservice.ser
   styleUrls: ['./update.component.scss']
 })
 export class UpdateComponent implements OnInit {
-  // title: any;
-  // description: any;
-  // id: any;
-  // noteId = localStorage.getItem('noteId');
-  notes: any;
+  title: any;
+  description: any;
+  id: any;
+  noteId = localStorage.getItem('NoteId');
 
 
   constructor(private noteservice: NoteserviceService) {}
@@ -21,14 +20,14 @@ export class UpdateComponent implements OnInit {
   }
 
   updateNote() {
-    // let requestData = {
-    //   NoteId: 1,
-    //   title: this.title,
-    //   description: this.description,     
-    // }
-    console.log('Id', this.notes.NoteId );
+    let requestData = {
+      NoteId: 1,
+      title: this.title,
+      description: this.description,     
+    }
+    console.log(requestData );
 
-    this.noteservice.updateNote(this.notes).subscribe((result:any) => {
+    this.noteservice.updateNote(requestData).subscribe((result:any) => {
       console.log((result));
     })
 

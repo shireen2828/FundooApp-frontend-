@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NoteserviceService } from 'src/app/Services/noteservice/noteservice.service';
 
@@ -11,6 +11,9 @@ export class CreatenotesComponent implements OnInit {
   noteForm!: FormGroup;
   userId = localStorage.getItem('userId');
   popup = false;
+
+ 
+  @Output() sendEventToGetNote = new EventEmitter<string>();
 
   constructor(private noteservice: NoteserviceService) {}
 
@@ -25,20 +28,7 @@ export class CreatenotesComponent implements OnInit {
     this.popup = !this.popup;
   }
 
-  // onReturn(){
-  //   console.log(this.noteForm);
-  //   if (this.noteForm.invalid){
-  //     console.log(this.noteForm);
-  //     return;
-  //   }
-    // // if (this.noteForm.value.title !== '' || this.noteForm.value.description !== '') {
-    //   this.noteservice.createNote(this.noteForm.value).subscribe((data:any) => {
-    //     this.popup = !this.popup;
-    //   });
-    //}
-  //   this.popup = !this.popup;
-  //   this.noteForm.reset();
-  // }
+
 
   addNote(): void {
     let obj = {
@@ -48,6 +38,7 @@ export class CreatenotesComponent implements OnInit {
     }
     this.noteservice.createNote(obj).subscribe((res) => {
       console.log("Success", res);
+      this.sendEventToGetNote.emit();
     })
 
   // createNote(){

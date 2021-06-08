@@ -25,8 +25,8 @@ export class NoteserviceService {
     return this.httpservice.post(`${this.baseurl}api/Note/addNotes`, data, true, this.options);
   }
 
-  getNote() {
-    return this.httpservice.get(`${this.baseurl}api/Note/RetrieveNotes/{UserId}`, true, this.options);
+  getNote(userId:any) {
+    return this.httpservice.get(`${this.baseurl}api/Note/RetrieveNotes/${userId}`, true, this.options);
   }
 
   updateNote(data: any) {

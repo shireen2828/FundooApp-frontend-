@@ -8,11 +8,14 @@ import { CommonModule } from '@angular/common';
 })
 export class DisplaynoteComponent implements OnInit {
   direction = 'row';
+  @Input()
+  notesArray: any[] = [];
  
   constructor() { }
  
   
   ngOnInit(): void {
+    console.log(this.notesArray);
   }
 
   change (flag: boolean) {

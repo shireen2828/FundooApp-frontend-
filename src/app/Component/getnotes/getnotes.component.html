@@ -1,3 +1,4 @@
-<app-createnotes></app-createnotes>
-<app-displaynote  (click)="getNote()">
+<app-createnotes (sendEventToGetNote)="messageReceived()"></app-createnotes>
+<app-displaynote [notesArray]="Notes">
+    <span> console.log </span>
 </app-displaynote>

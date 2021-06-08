@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IconsComponent implements OnInit {
 
+  noteData: any;
+
   constructor() { }
 
   ngOnInit(): void {

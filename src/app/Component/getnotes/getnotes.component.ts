@@ -7,7 +7,7 @@ import { NoteserviceService } from 'src/app/Services/noteservice/noteservice.ser
   styleUrls: ['./getnotes.component.scss']
 })
 export class GetnotesComponent implements OnInit {
-  Note: any;
+  Notes: any[] = [];
 
   constructor( private noteservice: NoteserviceService) {}
 
@@ -16,11 +16,17 @@ export class GetnotesComponent implements OnInit {
   }
 
   getNote() {
-    this.noteservice.getNote().subscribe((res:any) => {
+    let id = localStorage.getItem('userId');
+    this.noteservice.getNote(id).subscribe((res:any) => {
       console.log("Success", res['data'].data)
-      this.Note = res['data'].data;
-    })
+      this.Notes = res['data'].data;
 
+    })
+  }
+
+  messageReceived() {
+    console.log("Event called from take note");
+    this.getNote();
   }
 
 }
