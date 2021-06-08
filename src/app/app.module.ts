@@ -33,6 +33,7 @@ import { CreatenotesComponent } from './Component/Notes/createnotes/createnotes.
 import { DisplaynoteComponent } from './Component/Notes/displaynote/displaynote.component';
 import { UpdateComponent } from './Component/update/update.component';
 import { IconsComponent } from './Component/icons/icons.component';
+import { GetnotesComponent } from './Component/getnotes/getnotes.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { IconsComponent } from './Component/icons/icons.component';
     DisplaynoteComponent,
     UpdateComponent,
     IconsComponent,
+    GetnotesComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

@@ -1,13 +1,23 @@
-.icons{
-    margin-top: 70px;
-}
-
-.btn1{
-    float: right;
-    margin-top: 25px;
-    margin-left: 90px;
-}
-
-.t2{
-    margin-top: 20px;
-}
+.matcard-box{
+    margin: 10px;
+    width:400px;
+  }
+  .flex-container {
+    display: flex;
+   // margin-left: auto;
+  //margin-right: auto;
+  
+  //  flex-wrap: wrap;
+  }
+  .textarea_list{
+    width: 400px;
+  }
+  .textarea_list{
+  border: none;
+  outline: none;
+  }
+  .input_type
+  {
+  font-size:20px;
+  margin-left: -13px;
+  }

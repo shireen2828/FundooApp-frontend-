@@ -1,14 +1,21 @@
-<div class="title">
-    <div fxFlexLayout="column" class="t1">
-        <textarea  matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="auto"
-        cdkAutosizeMinColumns="auto" cdkAutosizeMaxRows="auto"  name="content" [(ngModel)]="title" placeholder="Title"></textarea>
+<div>
+    <mat-card class="matcard-box"  >
+            <mat-card-header>
+                    <mat-card-title>
+                            <input type="text"
+                             class="input_type"
+                             style="border:none; outline: none;"> 
+                    </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <textarea matInput class="textarea_list"  #autosize="cdkTextareaAutosize"
+                        cdkTextareaAutosize></textarea>
+        </mat-card-content>
+        <div class='noteicon'>
+            <app-icons></app-icons>
     </div>
-    <div class="t2">
-        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="auto"
-        cdkAutosizeMinColumns="auto" cdkAutosizeMaxRows="auto" [(ngModel)]="description" name="title" placeholder="Take a note" class="takeNote"></textarea>
-    </div>
-   
-        <div class="btn1">
-            <button mat-button role='button' tabindex="0"  color="blck" class="btn1" (click)="updateNote()">Close</button>
-        </div> 
-</div> 
+            <div>
+                    <button mat-button (click)='updateNote()'>close</button>
+            </div>
+    </mat-card>
+</div>

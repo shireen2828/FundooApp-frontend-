@@ -9,9 +9,7 @@ import { NoteserviceService } from 'src/app/Services/noteservice/noteservice.ser
 })
 export class CreatenotesComponent implements OnInit {
   noteForm!: FormGroup;
-  title: any;
-  description: any;
-  colour: any;
+  userId = localStorage.getItem('userId');
   popup = false;
 
   constructor(private noteservice: NoteserviceService) {}
@@ -19,8 +17,7 @@ export class CreatenotesComponent implements OnInit {
   ngOnInit(): void {
     this.noteForm = new FormGroup({
       title: new FormControl(''),
-      description: new FormControl(''),
-      colour: new FormControl('')
+      description: new FormControl('')
     });
   }
 
@@ -45,9 +42,9 @@ export class CreatenotesComponent implements OnInit {
 
   addNote(): void {
     let obj = {
-      "title": this.title,
-      "description": this.description,
-      "colour": this.colour
+      "title": this.noteForm.value.title,
+      "description": this.noteForm.value.description,
+      "UserId": 5
     }
     this.noteservice.createNote(obj).subscribe((res) => {
       console.log("Success", res);

@@ -7,10 +7,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./displaynote.component.scss']
 })
 export class DisplaynoteComponent implements OnInit {
-  @Input() notesList:any;
-  title! : string;
-  description!: string;
-  colour!: string;
+  direction = 'row';
  
   constructor() { }
  
@@ -18,4 +15,11 @@ export class DisplaynoteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  change (flag: boolean) {
+    if (flag) {
+      this.direction = 'column';
+    } else {
+      this.direction = 'row';
+    }
+  }
 }
