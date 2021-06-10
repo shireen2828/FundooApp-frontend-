@@ -1,4 +1,4 @@
-.div-mat-toolbar{
+.mat-toolbar{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,25 +9,25 @@
 .fundo-button{
   margin-left:-16px;
 }
-.div-img{
+.image {
   display: flex;
   width: 79px;
     height: 42px;
   margin-left:6px;
   padding-top: 30px;
   }
-  .div-keep{
+  .keep{
     margin-left:2vw;
   }
-  .divsearch {
+  .search-space {
     margin-left: -20px;
   }
-  .div-search{
+  .search{
     display: flex;
     border-radius:10px;
   //  border: 2px solid #5f6368;
   //  background-color: white;
-   width:650px;
+  //  width:100%;
     height:50px;
     margin-left:50px;
   }
@@ -36,7 +36,7 @@
     padding-left: 0px;
     // border: 1px solid;
     // border-radius: 10px;
-    width: 100;
+    width: 100%;
     margin-left: 25px;
     background-color: rgb(243, 243, 243);
   }
@@ -44,7 +44,7 @@
     display: flex;
     outline: none;
     width:100%;
-    height:30px;
+    height:30%;
     border:1px solid rgb(243, 243, 243);
     background-color: rgb(243, 243, 243);
   }
@@ -65,10 +65,8 @@
   margin-top:6px;
   margin-left: 5vw;
 }
-// .example-sidenav {
-//   padding: 150px;
-// }
-.example-container{
+
+.drawer-container {
  // display: flex;
   position: absolute;;
   top: 70px;
@@ -89,7 +87,7 @@
 .button_all:focus{
   background-color: rgb(247, 234, 123);
 }
-.button_allii{
+.buttons{
   outline: none;
 }
 .mat-stroked-button:not([disabled]) {
@@ -103,9 +101,9 @@
     font-weight: bold;
     
     }
-    .listdiv{
+    .list{
       margin-top: 7px;
     }
-    .div-button-icon{
+    .button-icon{
       width: 250px;
      }

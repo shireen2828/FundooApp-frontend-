@@ -35,6 +35,7 @@ import { UpdateComponent } from './Component/update/update.component';
 import { IconsComponent } from './Component/icons/icons.component';
 import { GetnotesComponent } from './Component/getnotes/getnotes.component';
 import { TrashComponent } from './Component/trash/trash.component';
+import { ArchiveComponent } from './Component/archive/archive.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { TrashComponent } from './Component/trash/trash.component';
     UpdateComponent,
     IconsComponent,
     GetnotesComponent,
-    TrashComponent
+    TrashComponent,
+    ArchiveComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

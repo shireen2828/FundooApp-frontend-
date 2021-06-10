@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="space-between center" class="div-mat-toolbar">
+<div fxLayout="row" fxLayoutAlign="space-between center" class="mat-toolbar">
   <mat-toolbar class="fundo-mat-toolbar">
 
       <div>
@@ -7,16 +7,16 @@
           </button>
       </div>
       <div class="img-div">
-        <img class="div-img" mat-card-image src="../../../assets/google_keep_new_icon.webp">
+        <img class="image" mat-card-image src="../../../assets/google_keep_new_icon.webp">
     </div>
-    <div class="div-keep">
+    <div class="keep">
         FundooNotes
     </div>
     <mat-card>
-      <div class="div-search" fxLayout="row" fxLayoutAlign="space-between center">
-          <mat-icon matSuffix class="divsearch">search</mat-icon>
+      <div class="search" fxLayout="row" fxLayoutAlign="space-between center">
+          <mat-icon matSuffix class="search-space">search</mat-icon>
           <input class="input-search" style="font-size: medium;" matInput placeholder="Search">
-          <mat-icon matSuffix style="margin-right: 10px;">clear</mat-icon>
+          <mat-icon matSuffix style="margin-right: 15px;">clear</mat-icon>
       </div>
   </mat-card>
   <div class="icon" >
@@ -39,17 +39,17 @@
   </mat-toolbar>
 </div>
 <div>
-    <mat-drawer-container class="example-container">
+    <mat-drawer-container class="drawer-container">
         <mat-drawer #drawer class="example-sidenav" mode="side" opened>
             <div>
                 <div>
-                    <div class="button_allii">
-                         <button class="button_all" mat-stroked-button>
+                    <div class="buttons">
+                         <a class="button_all" mat-stroked-button routerLink="/dashboard/getnotes">
                                 <div style="display: flex;">
                            <div> <mat-icon class="maticon"><img src="../../../assets/notes.svg" /></mat-icon></div>
-                            <div class="listdiv"><span class="listlabel">Notes</span></div> 
+                            <div class="list"><span class="listlabel">Notes</span></div> 
                         </div>
-                        </button>
+                    </a>
                     </div>
                 </div>
             </div>
@@ -57,31 +57,31 @@
                 <button mat-stroked-button class="button_all" >
                         <div style="display: flex;">
                     <div>  <mat-icon class="maticon">notifications_none</mat-icon></div>
-                    <div class="listdiv"><span class="listlabel">Remainder</span></div> 
+                    <div class="list"><span class="listlabel">Reminder</span></div> 
                         </div>
                 </button>
             </div>
             <mat-divider></mat-divider>
-            <div class="div-button-icon">
-                <button mat-stroked-button class="button_all" >
+            <div class="button-icon">
+                <a mat-stroked-button class="button_all" routerLink="/dashboard/archive">
                         <div style="display: flex;">
                    <div> <mat-icon class="maticon">archive</mat-icon></div>
-                   <div class="listdiv"><span class="listlabel">Archive</span></div>
+                   <div class="list"><span class="listlabel">Archive</span></div>
                         </div>
-                </button>
+                    </a>
 
-                <button mat-stroked-button class="button_all" >
+                <a mat-stroked-button class="button_all" routerLink= "/dashboard/trash">
                         <div style="display: flex;">
                                 <div>   <mat-icon class="maticon">delete_outline</mat-icon></div>
-                                <div class="listdiv"><span class="listlabel">Trash</span></div>
+                                <div class="list"><span class="listlabel" >Trash</span></div>
                         </div>
-               </button>
+                    </a>
             </div>
         
             </mat-drawer>
             <!-- <app-createnotes></app-createnotes>
             <app-displaynote></app-displaynote> -->
-            <app-getnotes></app-getnotes>
+            <!-- <app-getnotes></app-getnotes> -->
             <router-outlet></router-outlet>
     </mat-drawer-container>
 </div>

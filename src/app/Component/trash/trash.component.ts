@@ -8,12 +8,21 @@ import { NoteserviceService } from 'src/app/Services/noteservice/noteservice.ser
 })
 export class TrashComponent implements OnInit {
 
-  NotesArray: any= [];
+  notes: any= [];
  
 
   constructor(private noteservice: NoteserviceService) { }
 
   ngOnInit(): void {
+    this.getTrash();
+  }
+
+  getTrash() {
+    let id = localStorage.getItem('userId');
+    this.noteservice.getTrash(id).subscribe((res: any) => {
+      console.log(res);
+      this.notes = res['data'];
+    })
   }
 
 

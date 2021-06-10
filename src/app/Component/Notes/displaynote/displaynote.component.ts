@@ -8,7 +8,7 @@ import { UpdateComponent } from '../../update/update.component';
   styleUrls: ['./displaynote.component.scss']
 })
 export class DisplaynoteComponent implements OnInit {
-  
+   
   
   @Input()
   notesArray: any = [];

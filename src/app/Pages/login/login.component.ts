@@ -64,7 +64,6 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', result['data']);
       console.log(localStorage.getItem('token'));
       localStorage.setItem('userId', result['result'].userId)
-      localStorage.setItem('noteId', result['result'].noteId)
       this.openSnackBar('log in successfull', 2000)
       this.route.navigate(['/dashboard']);
     },

@@ -33,12 +33,20 @@ export class NoteserviceService {
     return this.httpservice.put(`${this.baseurl}api/Note/updateNotes`, data, true, this.options);
   }
 
-  deleteNote(data:any, noteId:any) {
-    return this.httpservice.delete(`${this.baseurl}api/Note/DeleteNote/${noteId}`, true, this.options);
+  trashNote(noteId:any) {
+    return this.httpservice.put(`${this.baseurl}api/Note/trashorUntrash?noteId=${noteId}`,null, true, this.options);
   }
 
-  trashNote(data: any, noteId:any) {
-    return this.httpservice.put(`${this.baseurl}api/Note/trashorUntrash`, noteId, true, this.options);
+  archiveNote(noteId:any) {
+    return this.httpservice.put(`${this.baseurl}api/Note/archiveOrUnarchive?noteId=${noteId}`, null, true, this.options);
+  }
+
+  getTrash(userId:any) {
+    return this.httpservice.get(`${this.baseurl}api/Note/getTrashNote/${userId}`, true, this.options);
+  }
+
+  getArchive(userId: any) {
+    return this.httpservice.get(`${this.baseurl}api/Note/getArchiveNote?userId=${userId}`, true, this.options);
   }
 
 }

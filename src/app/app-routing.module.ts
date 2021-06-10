@@ -10,6 +10,9 @@ import { DisplaynoteComponent } from './Component/Notes/displaynote/displaynote.
 import { UpdateComponent } from './Component/update/update.component';
 import { IconsComponent } from './Component/icons/icons.component';
 import { AuthguardGuard } from './authguard.guard';
+import { GetnotesComponent } from './Component/getnotes/getnotes.component';
+import { TrashComponent } from './Component/trash/trash.component';
+import { ArchiveComponent } from './Component/archive/archive.component';
 
 const routes: Routes = [
   { path: '', redirectTo:"/login", pathMatch: 'full'},
@@ -17,11 +20,14 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'forgetpassword', component: ForgetpasswordComponent },
   { path: 'resetpassword', component: ResetpasswordComponent},
-  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthguardGuard] },
-  { path: 'createnotes', component: CreatenotesComponent },
-  { path: 'displaynote', component: DisplaynoteComponent },
-  { path: 'update', component: UpdateComponent},
-  { path: 'icon', component: IconsComponent}
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthguardGuard], 
+  
+  children: [
+    {path: "", redirectTo: "getnotes", pathMatch: "full"},
+    {path: 'getnotes', component: GetnotesComponent},
+    {path: 'trash', component: TrashComponent},
+    {path: 'archive', component: ArchiveComponent}
+  ] }
 ];
 
 @NgModule({

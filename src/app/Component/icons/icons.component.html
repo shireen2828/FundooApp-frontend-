@@ -22,7 +22,7 @@
             </div>
         
             <div class="main">
-                <button mat-icon-button >
+                <button mat-icon-button  (click)="archiveNote()">
                     <img id="icon" mat-card-image src="../../../assets/archive.svg" />
                 </button>
             </div>
@@ -36,7 +36,7 @@
             <div>
                 <mat-menu #menu="matMenu">
         
-                    <button mat-menu-item (click)="deleteNote()">
+                    <button mat-menu-item >
                         <span>Delete note</span>
                     </button>
                     <button mat-menu-item >

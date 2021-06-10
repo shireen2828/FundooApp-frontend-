@@ -27,17 +27,21 @@ export class GetnotesComponent implements OnInit {
   }
 
   messageReceived() {
-    console.log("Event called from take note");
+    console.log("Event called");
     this.getNote();
   }
-  refreshAfterUpdation(event: any) {
-    if (event === 'update') {
-      console.log('refreshed');
-      this.getNote();
-    }
-    else {
-      console.log("update failure");
-    }
-  }
+  // refreshAfterUpdation(event: any) {
+  //   if (event === 'update') {
+  //     console.log('refreshed');
+  //     this.getNote();
+  //   }
+  //   else {
+  //     console.log("update failure");
+  //   }
+  // }
+
+  refresh(): void {
+    window.location.reload();
+}
 
 }

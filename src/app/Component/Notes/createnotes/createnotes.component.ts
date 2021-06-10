@@ -40,6 +40,12 @@ export class CreatenotesComponent implements OnInit {
       console.log("Success", res);
       this.sendEventToGetNote.emit();
     })
+  }
+
+  // refresh(): void {
+  //   window.location.reload();
+  //  }
+   }
 
   // createNote(){
   //   let data = {
@@ -54,6 +60,3 @@ export class CreatenotesComponent implements OnInit {
   //     })
   //   }
   // }
-
-}
-}

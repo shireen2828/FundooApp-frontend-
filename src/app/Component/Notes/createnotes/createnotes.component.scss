@@ -1,7 +1,7 @@
 .search-bar {
     display: flex;
     flex-direction: row;
-    width: 38vw;
+    width: 60%;
     height: 20px;
     border-radius: 5px;  
     padding: 13px;
@@ -24,8 +24,9 @@
 }
 .matcard-box{
     margin: 10px;
-    width: 38vw;
+    width: 60%;
   }
+  
   input:focus,select:focus {
     outline: none;
   }
@@ -35,7 +36,7 @@
     border-radius: 30%;                                                                                                                                                                                                                                                                                                                                                    
    }
   .textarea_list{
-    width: 30vw;
+    width: 30%;
   }
   .textarea_list{
   border: none;
