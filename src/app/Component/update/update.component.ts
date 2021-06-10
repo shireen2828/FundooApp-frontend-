@@ -10,18 +10,24 @@ import { NoteserviceService } from 'src/app/Services/noteservice/noteservice.ser
 export class UpdateComponent implements OnInit {
   title: any;
   description: any;
-  id: any;
   noteId = localStorage.getItem('NoteId');
 
 
-  constructor(private noteservice: NoteserviceService) {}
+  constructor(private noteservice: NoteserviceService, private dialogRef: MatDialogRef<UpdateComponent>,
+    @Inject(MAT_DIALOG_DATA) public data:any) {}
 
   ngOnInit(): void {
+    this.title = this.data.note.title;
+    this.description = this.data.note.description;
+  }
+
+  onClose() {
+    this.dialogRef.close({ 'success': false });
   }
 
   updateNote() {
     let requestData = {
-      NoteId: 1,
+      NoteId: this.data.note.noteId,
       title: this.title,
       description: this.description,     
     }
@@ -29,7 +35,12 @@ export class UpdateComponent implements OnInit {
 
     this.noteservice.updateNote(requestData).subscribe((result:any) => {
       console.log((result));
-    })
-
+      if (result.status == true){
+        this.dialogRef.close({ 'success': true });
+      }
+     
+    }, (error) => {
+      console.log(error);
+    });
   }
 }

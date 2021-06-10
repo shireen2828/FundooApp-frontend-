@@ -1,4 +1,3 @@
-<app-createnotes (sendEventToGetNote)="messageReceived()"></app-createnotes>
-<app-displaynote [notesArray]="Notes">
-    <span> console.log </span>
-</app-displaynote>
+<app-createnotes (sendEventToGetNotes)="messageReceived()" ></app-createnotes>
+<app-displaynote [notesArray]="NotesArray"
+    (updateSignal)="refreshAfterUpdation($event)"></app-displaynote>

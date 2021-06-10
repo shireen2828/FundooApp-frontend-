@@ -34,6 +34,7 @@ import { DisplaynoteComponent } from './Component/Notes/displaynote/displaynote.
 import { UpdateComponent } from './Component/update/update.component';
 import { IconsComponent } from './Component/icons/icons.component';
 import { GetnotesComponent } from './Component/getnotes/getnotes.component';
+import { TrashComponent } from './Component/trash/trash.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { GetnotesComponent } from './Component/getnotes/getnotes.component';
     UpdateComponent,
     IconsComponent,
     GetnotesComponent,
+    TrashComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

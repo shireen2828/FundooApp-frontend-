@@ -33,4 +33,12 @@ export class NoteserviceService {
     return this.httpservice.put(`${this.baseurl}api/Note/updateNotes`, data, true, this.options);
   }
 
+  deleteNote(data:any, noteId:any) {
+    return this.httpservice.delete(`${this.baseurl}api/Note/DeleteNote/${noteId}`, true, this.options);
+  }
+
+  trashNote(data: any, noteId:any) {
+    return this.httpservice.put(`${this.baseurl}api/Note/trashorUntrash`, noteId, true, this.options);
+  }
+
 }

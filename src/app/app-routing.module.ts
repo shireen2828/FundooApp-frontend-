@@ -9,13 +9,15 @@ import { CreatenotesComponent } from './Component/Notes/createnotes/createnotes.
 import { DisplaynoteComponent } from './Component/Notes/displaynote/displaynote.component';
 import { UpdateComponent } from './Component/update/update.component';
 import { IconsComponent } from './Component/icons/icons.component';
+import { AuthguardGuard } from './authguard.guard';
 
 const routes: Routes = [
+  { path: '', redirectTo:"/login", pathMatch: 'full'},
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forgetpassword', component: ForgetpasswordComponent },
   { path: 'resetpassword', component: ResetpasswordComponent},
-  { path: 'dashboard', component: DashboardComponent},
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthguardGuard] },
   { path: 'createnotes', component: CreatenotesComponent },
   { path: 'displaynote', component: DisplaynoteComponent },
   { path: 'update', component: UpdateComponent},

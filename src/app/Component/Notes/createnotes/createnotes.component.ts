@@ -12,8 +12,10 @@ export class CreatenotesComponent implements OnInit {
   userId = localStorage.getItem('userId');
   popup = false;
 
- 
-  @Output() sendEventToGetNote = new EventEmitter<string>();
+  @Input()
+  clicked: any;
+
+  @Output() sendEventToGetNote = new EventEmitter<any>();
 
   constructor(private noteservice: NoteserviceService) {}
 
@@ -27,8 +29,6 @@ export class CreatenotesComponent implements OnInit {
   onClickNote(){
     this.popup = !this.popup;
   }
-
-
 
   addNote(): void {
     let obj = {

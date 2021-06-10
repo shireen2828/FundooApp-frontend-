@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdateComponent } from '../../update/update.component';
 
 @Component({
   selector: 'app-displaynote',
@@ -7,22 +8,31 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./displaynote.component.scss']
 })
 export class DisplaynoteComponent implements OnInit {
-  direction = 'row';
+  
+  
   @Input()
-  notesArray: any[] = [];
+  notesArray: any = [];
+
+  @Output() updateSignal = new EventEmitter<string>();
  
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
  
   
   ngOnInit(): void {
-    console.log(this.notesArray);
+    this.notesArray;
   }
 
-  change (flag: boolean) {
-    if (flag) {
-      this.direction = 'column';
-    } else {
-      this.direction = 'row';
-    }
+  openDialog(note: any) {
+    const dialogRef = this.dialog.open(UpdateComponent, {
+      width: '500px',
+      data: { note }
+    });
+    dialogRef.afterClosed().subscribe((res: any) => {
+      if(res.Success)
+      this.updateSignal.emit('update');
+
+    })
   }
+
+
 }
