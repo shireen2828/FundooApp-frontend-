@@ -36,6 +36,16 @@
 <div>
     <mat-icon class="mat-icon-apps" matSuffux>apps</mat-icon>
 </div>
+<div>
+    <button mat-button [matMenuTriggerFor]="beforeMenu">
+            <img class="img-myself" src="../../../assets/myself.jpg">
+    </button>
+<mat-menu class="matmenuImage" #beforeMenu="matMenu" xPosition="before">
+<div><img class="img-myself" src="../../../assets/myself.jpg"></div> 
+<button mat-stroked-button>Add Account</button> 
+<button mat-stroked-button>Log Out</button>
+</mat-menu>
+</div>
   </mat-toolbar>
 </div>
 <div>
@@ -82,7 +92,9 @@
             <!-- <app-createnotes></app-createnotes>
             <app-displaynote></app-displaynote> -->
             <!-- <app-getnotes></app-getnotes> -->
-            <router-outlet></router-outlet>
+            <mat-drawer-content class="drawer-content">
+                    <router-outlet></router-outlet>
+            </mat-drawer-content>
     </mat-drawer-container>
 </div>
 

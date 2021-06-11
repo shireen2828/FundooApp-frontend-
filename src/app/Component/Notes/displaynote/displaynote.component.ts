@@ -13,7 +13,7 @@ export class DisplaynoteComponent implements OnInit {
   @Input()
   notesArray: any = [];
 
-  @Output() updateSignal = new EventEmitter<string>();
+  
  
   constructor(private dialog: MatDialog) { }
  
@@ -28,9 +28,9 @@ export class DisplaynoteComponent implements OnInit {
       data: { note }
     });
     dialogRef.afterClosed().subscribe((res: any) => {
-      if(res.Success)
-      this.updateSignal.emit('update');
-
+    },
+    (error) => {
+      console.log(error);
     })
   }
 

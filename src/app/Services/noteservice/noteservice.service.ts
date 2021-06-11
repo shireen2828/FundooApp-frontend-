@@ -49,4 +49,8 @@ export class NoteserviceService {
     return this.httpservice.get(`${this.baseurl}api/Note/getArchiveNote?userId=${userId}`, true, this.options);
   }
 
+  deleteNote(noteId: any) {
+    return this.httpservice.delete(`${this.baseurl}api/Note/DeleteNote/${noteId}`,null, true, this.options);
+  }
+
 }

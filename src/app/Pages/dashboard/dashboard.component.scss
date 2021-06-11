@@ -48,10 +48,10 @@
     border:1px solid rgb(243, 243, 243);
     background-color: rgb(243, 243, 243);
   }
-  .icon {
-    margin-left: 100px;
-    padding-left: 100px;
-  }
+  // .icon {
+  //   margin-left: 100px;
+  //   padding-left: 100px;
+  // }
 .mat-icon-refresh{
   padding-left: 30px; 
   margin-top:6px;
@@ -107,3 +107,20 @@
     .button-icon{
       width: 250px;
      }
+     .img-myself{
+      border-radius: 50%;
+      width:40px;
+       height:40px;
+    }
+    .matmenuImage{
+      width: 50px;;
+    }
+    
+    // .drawer-content {
+    //   padding-top: 5%;
+    // }
+    //  @media only screen and (max-width: 600px) {
+    //    .drawer-container {
+    //      margin-right: 0px;
+    //    }
+    //  }

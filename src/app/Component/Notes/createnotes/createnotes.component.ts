@@ -15,7 +15,7 @@ export class CreatenotesComponent implements OnInit {
   @Input()
   clicked: any;
 
-  @Output() sendEventToGetNote = new EventEmitter<any>();
+  @Output() refreshNote = new EventEmitter<any>();
 
   constructor(private noteservice: NoteserviceService) {}
 
@@ -38,8 +38,11 @@ export class CreatenotesComponent implements OnInit {
     }
     this.noteservice.createNote(obj).subscribe((res) => {
       console.log("Success", res);
-      this.sendEventToGetNote.emit();
-    })
+      this.refreshNote.emit();
+    },
+     (error) => {
+       console.log(error);
+     })
   }
 
   // refresh(): void {

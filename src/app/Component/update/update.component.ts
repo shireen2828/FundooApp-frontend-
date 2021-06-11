@@ -12,6 +12,7 @@ export class UpdateComponent implements OnInit {
   description: any;
   noteId = localStorage.getItem('NoteId');
 
+  @Output() update = new EventEmitter<any>();
 
   constructor(private noteservice: NoteserviceService, private dialogRef: MatDialogRef<UpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data:any) {}
@@ -37,6 +38,7 @@ export class UpdateComponent implements OnInit {
       console.log((result));
       if (result.status == true){
         this.dialogRef.close({ 'success': true });
+        this.update.emit();
       }
      
     }, (error) => {

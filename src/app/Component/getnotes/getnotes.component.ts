@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteserviceService } from 'src/app/Services/noteservice/noteservice.service';
+import { DataserviceService } from 'src/app/Services/DataService/dataservice.service';
 
 @Component({
   selector: 'app-getnotes',
@@ -9,9 +10,7 @@ import { NoteserviceService } from 'src/app/Services/noteservice/noteservice.ser
 export class GetnotesComponent implements OnInit {
   NotesArray: any= [];
 
-  constructor( private noteservice: NoteserviceService) {}
-
-  clicked = false;
+  constructor( private noteservice: NoteserviceService, private dataservice: DataserviceService) {}
 
   ngOnInit(): void {
     this.getNote();
@@ -22,26 +21,35 @@ export class GetnotesComponent implements OnInit {
     this.noteservice.getNote(id).subscribe((res:any) => {
       console.log("Success",res['data']);
       this.NotesArray = res['data'].reverse();
-
     })
   }
 
-  messageReceived() {
-    console.log("Event called");
+  getNotes(event: any) {
+    console.log(event);
     this.getNote();
   }
-  // refreshAfterUpdation(event: any) {
-  //   if (event === 'update') {
-  //     console.log('refreshed');
-  //     this.getNote();
-  //   }
-  //   else {
-  //     console.log("update failure");
-  //   }
-  // }
 
-  refresh(): void {
-    window.location.reload();
-}
+  updateNotes(event: any) {
+    console.log(event);
+    this.getNote();
+  }
+
+//   messageReceived($event: any) {
+//     console.log("Event called");
+//     this.getNote();
+//   }
+//   refreshAfterUpdation(event: any) {
+//     if (event === 'updateNotes') {
+//       console.log('refreshed');
+//       this.getNote();
+//     }
+//     else {
+//       console.log("update failure");
+//     }
+//   }
+
+//   refresh(): void {
+//     window.location.reload();
+// }
 
 }

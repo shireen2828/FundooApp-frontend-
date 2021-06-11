@@ -20,7 +20,7 @@ export class HttpServiceService {
     return this.httpclient.put(baseUrl, data, isHeaderRequired && headers)
   }
 
-  delete(baseUrl: string, isHeaderRequired: any = false, headers:any = null){
+  delete(baseUrl: string, data:any, isHeaderRequired: any = false, headers:any = null){
     return this.httpclient.delete(baseUrl, isHeaderRequired && headers)
   }
 }
